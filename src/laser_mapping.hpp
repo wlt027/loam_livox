@@ -640,7 +640,7 @@ class Laser_mapping
                 m_maximum_pt_time_stamp = max_t;
                 m_last_time_stamp = max_t;
                 reset_incremtal_parameter();
-                printf( "****** min max timestamp = [%.6f, %.6f] ****** \r\n", m_minimum_pt_time_stamp, m_maximum_pt_time_stamp );
+                //printf( "****** min max timestamp = [%.6f, %.6f] ****** \r\n", m_minimum_pt_time_stamp, m_maximum_pt_time_stamp );
 
                 // while ( !m_corner_last_que.empty() )
                 // {
@@ -905,7 +905,7 @@ class Laser_mapping
                 m_down_sample_filter_surface.filter( *laserCloudSurfStack );
                 int laser_surface_pt_num = laserCloudSurfStack->points.size();
 
-                printf( "map corner num %d  surf num %d \n", laserCloudCornerFromMapNum, laserCloudSurfFromMapNum );
+                //printf( "map corner num %d  surf num %d \n", laserCloudCornerFromMapNum, laserCloudSurfFromMapNum );
 
                 int                    surf_avail_num = 0;
                 int                    corner_avail_num = 0;
@@ -1200,7 +1200,7 @@ class Laser_mapping
                         minimize_cost = summary.final_cost;
                     }
 
-                    printf( "===== corner factor num %d , surf factor num %d=====\n", corner_avail_num, surf_avail_num );
+//                    printf( "===== corner factor num %d , surf factor num %d=====\n", corner_avail_num, surf_avail_num );
 
                     if ( laser_corner_pt_num != 0 && laser_surface_pt_num != 0 )
                     {

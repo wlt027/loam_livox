@@ -46,3 +46,13 @@ target_link_libraries(livox_scanRegistration ${catkin_LIBRARIES} ${PCL_LIBRARIES
 add_executable(livox_laserMapping src/laser_mapping.cpp)
 target_link_libraries(livox_laserMapping ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})
 
+###################
+## visualization ##
+###################
+find_package(Pangolin REQUIRED)
+include_directories(${Pangolin_INCLUDE_DIRS})
+
+add_executable(visualizer
+        src/Visualization_node.cpp
+        src/RosVisualization.cpp)
+target_link_libraries(visualizer ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${Pangolin_LIBRARIES} ${OpenCV_LIBS})
